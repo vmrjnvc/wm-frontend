@@ -20,35 +20,58 @@ export default {
       if (this.currentSlide === 0) this.currentSlide = 2
       else this.currentSlide -= 1
     },
+    setSlide(x) {
+      this.currentSlide = x
+    },
   },
 }
 </script>
 
 <template>
   <div class="slide-container">
-    <Transition name="fade" mode="out-in"
-      ><img
-        class="slide-svg"
-        src="../assets/images/noted.svg"
-        alt="collaboration"
-        v-if="currentSlide === 0"
-    /></Transition>
-    <Transition name="fade" mode="out-in">
-      <img
-        class="slide-svg"
-        src="../assets/images/services.svg"
-        alt="services"
-        v-show="currentSlide === 1"
-    /></Transition>
-    <Transition name="fade" mode="out-in">
-      <img
-        class="slide-svg"
-        src="../assets/images/coworking.svg"
-        alt="coworking"
-        v-show="currentSlide === 2"
-    /></Transition>
+    <Transition name="fade">
+      <div class="img-text-container" v-show="currentSlide === 0">
+        <img
+          class="slide-svg"
+          src="../assets/images/noted.svg"
+          alt="collaboration"
+        />
+        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 1</p>
+      </div>
+    </Transition>
+    <Transition name="fade">
+      <div class="img-text-container" v-show="currentSlide === 1">
+        <img
+          class="slide-svg"
+          src="../assets/images/services.svg"
+          alt="services"
+        />
+        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 2</p>
+      </div></Transition
+    >
+    <Transition name="fade">
+      <div class="img-text-container" v-show="currentSlide === 2">
+        <img
+          class="slide-svg"
+          src="../assets/images/coworking.svg"
+          alt="coworking"
+        />
+        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 3</p>
+      </div></Transition
+    >
+    <div class="slide-btn-container" v-show="!mobile">
+      <button class="circle" @click="() => this.setSlide(0)">
+        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 0 }" />
+      </button>
+      <button class="circle" @click="() => this.setSlide(1)">
+        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 1 }" />
+      </button>
+      <button class="circle" @click="() => this.setSlide(2)">
+        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 2 }" />
+      </button>
+    </div>
   </div>
-  <div class="slide-btn-container" v-show="mobile">
+  <div class="mobile-slide-btn-container" v-show="mobile">
     <button class="left-slide-btn" @click="decrement">
       <fa icon="arrow-left" />
     </button>
@@ -78,7 +101,7 @@ export default {
     position: absolute;
   }
 }
-.slide-btn-container {
+.mobile-slide-btn-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -95,5 +118,42 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+@media (min-width: 480px) {
+  .slide-container {
+    height: 240px;
+    width: 100%;
+  }
+  .img-text-container {
+    display: flex;
+    width: 90%;
+    max-width: 800px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: absolute;
+    .slide-svg {
+      position: static;
+      width: unset;
+    }
+  }
+  .slide-btn-container {
+    position: absolute;
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    .circle {
+      svg {
+        width: 10px;
+      }
+    }
+  }
 }
 </style>

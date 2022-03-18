@@ -117,9 +117,6 @@ nav {
   .menu-icon {
     margin-right: 0.5rem;
   }
-  .icon-active {
-    color: $greenLight;
-  }
 }
 .search-input {
   display: block;
