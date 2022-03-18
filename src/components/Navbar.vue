@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'navbar',
+  name: 'Navbar',
   props: {
     mobile: {
       type: Boolean,
@@ -81,7 +81,7 @@ export default {
   /></Transition>
 
   <!-- Mobile dropdown menu list -->
-  <Transition name="fade"
+  <Transition name="slide-fade"
     ><ul v-show="mobileNav" class="dropdown-nav" :class="{ active: mobileNav }">
       <li class="home">
         <a href="">HOME</a>
@@ -93,9 +93,7 @@ export default {
   >
 
   <!-- linear gradient bottom nav border -->
-  <Transition name="fade">
-    <div class="bottom-hr" v-show="!mobileNav"></div
-  ></Transition>
+  <div class="bottom-hr"></div>
 </template>
 
 <style lang="scss">
@@ -139,14 +137,18 @@ nav {
   flex-direction: column;
   list-style: none;
   width: 100%;
-  height: 0px;
-  align-items: center;
-  li,
-  a {
+  height: 160px;
+  li {
+    height: 40px;
     width: 100%;
-    padding-left: 0.5rem;
-    text-decoration: none;
-    color: #fff;
+    line-height: 40px;
+    vertical-align: middle;
+    padding-left: 1rem;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+    }
   }
   .home {
     background-color: $greenLight;
@@ -160,9 +162,6 @@ nav {
   .contact {
     background-color: $blue;
   }
-  &.active {
-    height: 120px;
-  }
 }
 .nav-container {
   display: flex;
@@ -173,20 +172,33 @@ nav {
     display: flex;
     list-style: none;
     justify-content: space-around;
+    li {
+      svg:hover,
+      a:hover {
+        color: $greenLight;
+      }
+      svg:active,
+      a:active {
+        color: $greenDark;
+      }
+      svg:focus,
+      a:focus {
+        color: $blueLight;
+      }
+    }
   }
 }
 
 // transitions
-.fade-enter-active {
+.slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
-.fade-leave-active {
+.slide-fade-leave-active {
   transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.fade-enter-from,
-.fade-leave-to {
-  transform: translateY(40px);
-  opacity: 0;
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  height: 0;
 }
 
 .bounce-enter-active {

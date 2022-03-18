@@ -19,10 +19,12 @@ svg {
 button,
 svg,
 input,
-body {
+body,
+a {
   font-size: $fontSize;
   color: $textColor;
   font-family: $fontFamily;
+  transition: 220ms color ease;
 }
 a {
   text-decoration: none;
