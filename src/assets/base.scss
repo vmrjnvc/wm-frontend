@@ -1,5 +1,29 @@
+@import './variables.scss';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+#app {
+  min-height: 100vh;
+  width: 100%;
+}
+button,
+svg {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+button,
+svg,
+input,
+body {
+  font-size: $fontSize;
+  color: $textColor;
+  font-family: $fontFamily;
+}
+a {
+  text-decoration: none;
 }
