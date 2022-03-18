@@ -72,26 +72,30 @@ export default {
       </button>
     </div>
   </nav>
-
-  <input
-    type="text"
-    v-show="search"
-    class="search-input"
-    placeholder="Search"
-  />
+  <Transition name="bounce">
+    <input
+      type="text"
+      v-show="search"
+      class="search-input"
+      placeholder="Search"
+  /></Transition>
 
   <!-- Mobile dropdown menu list -->
-  <ul v-show="mobileNav" class="dropdown-nav" :class="{ active: mobileNav }">
-    <li class="home">
-      <a href="">HOME</a>
-    </li>
-    <li class="about"><a href="">ABOUT US</a></li>
-    <li class="work"><a href="">OUR WORK</a></li>
-    <li class="contact"><a href="">CONTACT</a></li>
-  </ul>
+  <Transition name="fade"
+    ><ul v-show="mobileNav" class="dropdown-nav" :class="{ active: mobileNav }">
+      <li class="home">
+        <a href="">HOME</a>
+      </li>
+      <li class="about"><a href="">ABOUT US</a></li>
+      <li class="work"><a href="">OUR WORK</a></li>
+      <li class="contact"><a href="">CONTACT</a></li>
+    </ul></Transition
+  >
 
   <!-- linear gradient bottom nav border -->
-  <div class="bottom-hr" v-show="!mobileNav"></div>
+  <Transition name="fade">
+    <div class="bottom-hr" v-show="!mobileNav"></div
+  ></Transition>
 </template>
 
 <style lang="scss">
@@ -169,6 +173,37 @@ nav {
     display: flex;
     list-style: none;
     justify-content: space-around;
+  }
+}
+
+// transitions
+.fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 </style>
