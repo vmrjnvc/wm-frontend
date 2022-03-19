@@ -18,7 +18,7 @@ export default {
 .project {
   width: 200px;
   height: 120px;
-  background-color: $darkGray;
+  background-color: $gray;
   display: flex;
   align-items: center;
   justify-content: center;

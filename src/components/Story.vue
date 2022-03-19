@@ -52,7 +52,7 @@ export default {
   .story-img {
     height: 120px;
     width: 100%;
-    background-color: $darkGray;
+    background-color:  $gray;
     display: flex;
     align-items: center;
     justify-content: center;

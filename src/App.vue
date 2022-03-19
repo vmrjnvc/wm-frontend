@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.vue'
 import Slider from './components/Slider.vue'
 import About from './components/About.vue'
 import Work from './components/Work.vue'
+import Footer from './components/Footer.vue'
 export default {
   name: 'App',
   components: {
@@ -10,6 +11,7 @@ export default {
     Slider,
     About,
     Work,
+    Footer,
   },
   data() {
     return {
@@ -25,6 +27,12 @@ export default {
         'clock',
         'cloud',
         'heart',
+        'facebook-f',
+        'twitter',
+        'envelope',
+        'house',
+        'circle-question',
+        'arrow-up-long',
       ],
     }
   },
@@ -66,10 +74,12 @@ export default {
     :mobile="mobile"
     :mobileNav="mobileNav"
     :tablet="tablet"
+    :svgs="svgs"
   />
   <Slider :mobile="mobile" />
   <About :mobile="mobile" :svgs="svgs" />
   <Work :svgs="svgs" />
+  <Footer :svgs="svgs" :mobile="mobile" :tablet="tablet" />
 </template>
 
 <style lang="scss"></style>

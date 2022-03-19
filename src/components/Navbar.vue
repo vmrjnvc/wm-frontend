@@ -20,6 +20,9 @@ export default {
     tablet: {
       type: Boolean,
     },
+    svgs: {
+      type: Array,
+    },
   },
   data() {
     return {}
@@ -37,22 +40,22 @@ export default {
     <div class="nav-container">
       <ul v-show="!mobile" class="navigation">
         <li class="home" v-if="tablet">
-          <a href=""><fa icon="house" /></a>
+          <a href=""><fa :icon="svgs[9]" /></a>
         </li>
         <li class="home" v-else><a href="">HOME</a></li>
         <span v-if="!tablet">/</span>
         <li class="home" v-if="tablet">
-          <a href=""><fa icon="circle-question" /></a>
+          <a href=""><fa :icon="svgs[10]" /></a>
         </li>
         <li class="home" v-else><a href="">ABOUT US</a></li>
         <span v-if="!tablet">/</span>
         <li class="home" v-if="tablet">
-          <a href=""><fa icon="graduation-cap" /></a>
+          <a href=""><fa :icon="svgs[0]" /></a>
         </li>
         <li class="home" v-else><a href="">OUR WORK</a></li>
         <span v-if="!tablet">/</span>
         <li class="home" v-if="tablet">
-          <a href=""><fa icon="envelope" /></a>
+          <a href=""><fa :icon="svgs[8]" /></a>
         </li>
         <li class="home" v-else><a href="">CONTACT</a></li>
       </ul>

@@ -27,11 +27,10 @@ export default {
 
 <style lang="scss">
 .work-container {
-  padding: 1rem 0;
   width: 85%;
   max-width: 500px;
   margin: 0 auto;
-  padding: 1rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
