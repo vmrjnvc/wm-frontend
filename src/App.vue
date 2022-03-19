@@ -2,12 +2,14 @@
 import Navbar from './components/Navbar.vue'
 import Slider from './components/Slider.vue'
 import About from './components/About.vue'
+import Work from './components/Work.vue'
 export default {
   name: 'App',
   components: {
     Navbar,
     Slider,
     About,
+    Work,
   },
   data() {
     return {
@@ -16,6 +18,14 @@ export default {
       mobileNav: null,
       windowWidth: null,
       search: null,
+      svgs: [
+        'graduation-cap',
+        'thumbs-up',
+        'calculator',
+        'clock',
+        'cloud',
+        'heart',
+      ],
     }
   },
   created() {
@@ -58,7 +68,8 @@ export default {
     :tablet="tablet"
   />
   <Slider :mobile="mobile" />
-  <About :mobile="mobile" />
+  <About :mobile="mobile" :svgs="svgs" />
+  <Work :svgs="svgs" />
 </template>
 
 <style lang="scss"></style>

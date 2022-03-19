@@ -91,13 +91,13 @@ export default {
 
 .slide-container {
   width: 100%;
-  height: 200px;
+  height: 160px;
   background-color: rgb(228, 228, 228);
   position: relative;
   .slide-svg {
     height: 100%;
     width: 100%;
-    padding: 1rem;
+    padding: 1.5rem;
     position: absolute;
   }
 }
@@ -137,7 +137,11 @@ export default {
     position: absolute;
     .slide-svg {
       position: static;
-      width: unset;
+      height: 180px;
+      width: 180px;
+    }
+    p {
+      font-size: 1.6rem;
     }
   }
   .slide-btn-container {
@@ -153,6 +157,20 @@ export default {
       svg {
         width: 10px;
       }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .slide-container {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    .slide-svg {
+      height: 240px;
+      width: 240px;
+    }
+    p {
+      font-size: 1.8rem;
     }
   }
 }

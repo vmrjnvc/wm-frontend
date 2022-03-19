@@ -9,11 +9,9 @@ export default {
     mobile: {
       type: Boolean,
     },
-  },
-  data() {
-    return {
-      svgs: ['graduation-cap', 'thumbs-up'],
-    }
+    svgs: {
+      type: Array,
+    },
   },
 }
 </script>
@@ -29,9 +27,9 @@ export default {
 <style lang="scss">
 .about-container {
   width: 85%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding: 1rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,6 +39,7 @@ export default {
 @media (min-width: 480px) {
   .about-container {
     align-items: flex-start;
+    padding: 2rem 0;
   }
 }
 </style>
