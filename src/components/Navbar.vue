@@ -29,7 +29,9 @@ export default {
 
 <template>
   <nav>
-    <h1><fa icon="wifi" /> <span>Wireless</span> Media</h1>
+    <h1 class="branding">
+      <fa icon="wifi" class="logo" /> <span>Wireless</span> Media
+    </h1>
 
     <!-- Navigation menu for tablet or bigger screen size -->
     <div class="nav-container">
@@ -108,7 +110,7 @@ nav {
   align-items: center;
   transition: 500ms ease all;
   h1 {
-    font-size: 1em;
+    font-size: 1.3rem;
     svg,
     span {
       color: $greenLight;
@@ -213,6 +215,28 @@ nav {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media (min-width: 480px) {
+  .nav-container {
+    width: 60%;
+    .navigation {
+      width: 100%;
+      justify-content: space-around;
+      padding-right: 5%;
+    }
+  }
+}
+@media (min-width: 768px) {
+  nav {
+    height: 80px;
+    .branding {
+      font-size: 1.6rem;
+      .logo {
+        font-size: 2rem;
+      }
+    }
   }
 }
 </style>

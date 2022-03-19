@@ -31,11 +31,11 @@ export default {
     },
     checkSize() {
       this.windowWidth = window.innerWidth
-      if (this.windowWidth <= 480) {
+      if (this.windowWidth < 480) {
         this.mobile = true
         this.tablet = false
         return
-      } else if (this.windowWidth > 480 && this.windowWidth < 768) {
+      } else if (this.windowWidth >= 480 && this.windowWidth < 768) {
         this.mobile = false
         this.tablet = true
         return

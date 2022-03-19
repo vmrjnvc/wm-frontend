@@ -48,9 +48,9 @@ export default {
 @import '../assets/variables.scss';
 
 .story-container {
-  width: 280px;
+  width: 200px;
   .story-img {
-    height: 150px;
+    height: 120px;
     width: 100%;
     background-color: $darkGray;
     display: flex;
@@ -64,16 +64,38 @@ export default {
     }
   }
     .story-txt {
+      pre {
+        font-size: 1.1rem;
+      }
+      p {
+        font-size: 1rem;
+      }
       button {
         float: right;
         background-color: $gray;
+        margin-top: 0.5rem;
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
+        font-size: 0.8rem;
         &:hover {
           background-color: $greenLight;
           color: #fff;
         }
       }
     }
+}
+@media (min-width: 480px) {
+  .story-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    .story-img {
+      width: 200px;
+    }
+    .story-txt {
+      width: calc(100% - 220px);
+    }
+  }
 }
 </style>
