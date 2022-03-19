@@ -60,14 +60,14 @@ export default {
       </div></Transition
     >
     <div class="slide-btn-container" v-show="!mobile">
-      <button class="circle" @click="() => this.setSlide(0)">
-        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 0 }" />
+      <button class="circle" @click="setSlide(0)">
+        <fa icon="circle" :class="{ 'icon-active': currentSlide === 0 }" />
       </button>
-      <button class="circle" @click="() => this.setSlide(1)">
-        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 1 }" />
+      <button class="circle" @click="setSlide(1)">
+        <fa icon="circle" :class="{ 'icon-active': currentSlide === 1 }" />
       </button>
-      <button class="circle" @click="() => this.setSlide(2)">
-        <fa icon="circle" :class="{ 'icon-active': this.currentSlide === 2 }" />
+      <button class="circle" @click="setSlide(2)">
+        <fa icon="circle" :class="{ 'icon-active': currentSlide === 2 }" />
       </button>
     </div>
   </div>
@@ -105,7 +105,7 @@ export default {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  padding: 0.3rem 0.6rem;
+  padding: 0.8rem 0.6rem;
   svg:hover {
     color: $greenLight;
   }

@@ -1,11 +1,13 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Slider from './components/Slider.vue'
+import About from './components/About.vue'
 export default {
   name: 'App',
   components: {
     Navbar,
     Slider,
+    About,
   },
   data() {
     return {
@@ -56,6 +58,7 @@ export default {
     :tablet="tablet"
   />
   <Slider :mobile="mobile" />
+  <About :mobile="mobile" />
 </template>
 
 <style lang="scss"></style>

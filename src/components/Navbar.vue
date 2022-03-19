@@ -108,7 +108,7 @@ nav {
   align-items: center;
   transition: 500ms ease all;
   h1 {
-    font-size: 1.2em;
+    font-size: 1em;
     svg,
     span {
       color: $greenLight;
