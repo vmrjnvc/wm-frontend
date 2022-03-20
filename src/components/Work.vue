@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <div class="work-container">
+  <section class="work-container" id="work">
     <h2>What We Do</h2>
     <div class="projects-container">
       <Project :svg="svgs[2]" />
@@ -22,7 +22,7 @@ export default {
       <Project :svg="svgs[4]" />
       <Project :svg="svgs[5]" />
     </div>
-  </div>
+  </section>
 </template>
 
 <style lang="scss">

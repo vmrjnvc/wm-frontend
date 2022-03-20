@@ -31,7 +31,7 @@ export default {
 </script>
 
 <template>
-  <nav>
+  <nav id="nav">
     <h1 class="branding">
       <fa icon="wifi" class="logo" /> <span>Wireless</span> Media
     </h1>
@@ -39,25 +39,29 @@ export default {
     <!-- Navigation menu for tablet or bigger screen size -->
     <div class="nav-container">
       <ul v-show="!mobile" class="navigation">
-        <li class="home" v-if="tablet">
-          <a href=""><fa :icon="svgs[9]" /></a>
+        <li class="li-home" v-if="tablet">
+          <a href="#nav">
+            <fa :icon="svgs[9]" />
+          </a>
         </li>
-        <li class="home" v-else><a href="">HOME</a></li>
+        <li class="li-home" v-else>
+          <a href="#nav">HOME</a>
+        </li>
         <span v-if="!tablet">/</span>
-        <li class="home" v-if="tablet">
-          <a href=""><fa :icon="svgs[10]" /></a>
+        <li class="li-about" v-if="tablet">
+          <a href="#about"><fa :icon="svgs[10]" /></a>
         </li>
-        <li class="home" v-else><a href="">ABOUT US</a></li>
+        <li class="li-about" v-else><a href="#about">ABOUT US</a></li>
         <span v-if="!tablet">/</span>
-        <li class="home" v-if="tablet">
-          <a href=""><fa :icon="svgs[0]" /></a>
+        <li class="li-work" v-if="tablet">
+          <a href="#work"><fa :icon="svgs[0]" /></a>
         </li>
-        <li class="home" v-else><a href="">OUR WORK</a></li>
+        <li class="li-work" v-else><a href="#work">OUR WORK</a></li>
         <span v-if="!tablet">/</span>
-        <li class="home" v-if="tablet">
-          <a href=""><fa :icon="svgs[8]" /></a>
+        <li class="li-contact" v-if="tablet">
+          <a href="#footer"><fa :icon="svgs[8]" /></a>
         </li>
-        <li class="home" v-else><a href="">CONTACT</a></li>
+        <li class="li-contact" v-else><a href="#footer">CONTACT</a></li>
       </ul>
 
       <fa
@@ -68,13 +72,12 @@ export default {
         :class="{ 'icon-active': mobileNav }"
       />
 
-      <button>
-        <fa
-          icon="magnifying-glass"
-          @click="toggleSearch"
-          :class="{ 'icon-active': search }"
-        />
-      </button>
+      <fa
+        icon="magnifying-glass"
+        @click="toggleSearch"
+        class="search-icon"
+        :class="{ 'icon-active': search }"
+      />
     </div>
   </nav>
   <Transition name="bounce">
@@ -88,12 +91,18 @@ export default {
   <!-- Mobile dropdown menu list -->
   <Transition name="slide-fade"
     ><ul v-show="mobileNav" class="dropdown-nav" :class="{ active: mobileNav }">
-      <li class="home">
-        <a href="">HOME</a>
+      <li class="li-home">
+        <a href="#nav" @click="toggleMobileNav">HOME</a>
       </li>
-      <li class="about"><a href="">ABOUT US</a></li>
-      <li class="work"><a href="">OUR WORK</a></li>
-      <li class="contact"><a href="">CONTACT</a></li>
+      <li class="li-about" @click="toggleMobileNav">
+        <a href="#about">ABOUT US</a>
+      </li>
+      <li class="li-work" @click="toggleMobileNav">
+        <a href="#work">OUR WORK</a>
+      </li>
+      <li class="li-contact" @click="toggleMobileNav">
+        <a href="#footer">CONTACT</a>
+      </li>
     </ul></Transition
   >
 
@@ -105,7 +114,7 @@ export default {
 @import '../assets/variables.scss';
 
 nav {
-  height: 40px;
+  height: 50px;
   width: 98%;
   margin: 0 auto;
   display: flex;
@@ -120,7 +129,11 @@ nav {
     }
   }
   .menu-icon {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
+    font-size: 1.4em;
+  }
+  .search-icon {
+    font-size: 1.2em;
   }
 }
 .search-input {
@@ -152,16 +165,16 @@ nav {
       font-weight: 500;
     }
   }
-  .home {
+  .li-home {
     background-color: $greenLight;
   }
-  .about {
+  .li-about {
     background-color: $greenDark;
   }
-  .work {
+  .li-work {
     background-color: $blueLight;
   }
-  .contact {
+  .li-contact {
     background-color: $blue;
   }
 }

@@ -13,7 +13,7 @@ export default {
     return {
       showFullText: false,
       title: 'Lorem Ipsum',
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
     }
   },
   computed: {
@@ -23,7 +23,7 @@ export default {
       }
       return this.mobile
         ? ''
-        : `${this.text.slice(0, 150)}`
+        : `${this.text.slice(0, 100)}`
     },
   },
 }
@@ -65,10 +65,10 @@ export default {
   }
     .story-txt {
       pre {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
       }
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       button {
         float: right;
@@ -76,7 +76,7 @@ export default {
         margin-top: 0.5rem;
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
-        font-size: 0.8rem;
+        font-size: 1rem;
         &:hover {
           background-color: $greenLight;
           color: #fff;

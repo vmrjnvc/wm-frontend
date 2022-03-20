@@ -33,30 +33,26 @@ export default {
       <div class="img-text-container" v-show="currentSlide === 0">
         <img
           class="slide-svg"
-          src="../assets/images/noted.svg"
+          src="../assets/images/world.svg"
           alt="collaboration"
         />
-        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 1</p>
+        <p v-show="!mobile">DUIS EUISMOD CONGUE LECTUS</p>
       </div>
     </Transition>
     <Transition name="fade">
       <div class="img-text-container" v-show="currentSlide === 1">
-        <img
-          class="slide-svg"
-          src="../assets/images/services.svg"
-          alt="services"
-        />
-        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 2</p>
+        <img class="slide-svg" src="../assets/images/ai.svg" alt="services" />
+        <p v-show="!mobile">FUSCE ALIQUAM RISUS MAGNA</p>
       </div></Transition
     >
     <Transition name="fade">
       <div class="img-text-container" v-show="currentSlide === 2">
         <img
           class="slide-svg"
-          src="../assets/images/coworking.svg"
+          src="../assets/images/design.svg"
           alt="coworking"
         />
-        <p v-show="!mobile">LOREM IPSUM DOLOR SIT 3</p>
+        <p v-show="!mobile">VESTIBULUM JUSTO JUSTO, VENENATIS</p>
       </div></Transition
     >
     <div class="slide-btn-container" v-show="!mobile">
@@ -71,15 +67,14 @@ export default {
       </button>
     </div>
   </div>
+
   <div class="mobile-slide-btn-container" v-show="mobile">
     <button class="left-slide-btn" @click="decrement">
       <fa icon="arrow-left" />
     </button>
-
-    <p v-if="currentSlide === 0">LOREM IPSUM DOLOR SIT 1</p>
-    <p v-if="currentSlide === 1">LOREM IPSUM DOLOR SIT 2</p>
-    <p v-if="currentSlide === 2">LOREM IPSUM DOLOR SIT 3</p>
-
+    <p v-if="currentSlide === 0">DUIS EUISMOD CONGUE LECTUS</p>
+    <p v-if="currentSlide === 1">FUSCE ALIQUAM RISUS MAGNA</p>
+    <p v-if="currentSlide === 2">VESTIBULUM JUSTO JUSTO, VENENATIS</p>
     <button class="right-slide-btn" @click="increment">
       <fa icon="arrow-right" />
     </button>
@@ -104,10 +99,18 @@ export default {
 .mobile-slide-btn-container {
   display: flex;
   width: 100%;
+  height: max-content;
   justify-content: space-between;
   padding: 0.8rem 0.6rem;
+  border-bottom: 2px solid $gray;
+
   svg:hover {
     color: $greenLight;
+  }
+  p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    text-align: center;
   }
 }
 .fade-enter-active,
@@ -170,7 +173,7 @@ export default {
       width: 240px;
     }
     p {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
     }
   }
 }

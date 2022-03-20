@@ -12,35 +12,42 @@ export default {
       type: Boolean,
     },
   },
+  methods: {
+    scrollToTop() {
+      document.documentElement.scrollTo({ top: 0 })
+    },
+  },
 }
 </script>
 
 <template>
-  <footer>
+  <footer id="footer">
     <div class="social-networks-container">
-      <div class="svg-network-circle"><fa :icon="['fab', svgs[6]]" /></div>
-      <div class="svg-network-circle"><fa :icon="['fab', svgs[7]]" /></div>
-      <div class="svg-network-circle"><fa :icon="svgs[8]" /></div>
+      <a href="" class="svg-network-circle"><fa :icon="['fab', svgs[6]]" /></a>
+      <a href="" class="svg-network-circle"><fa :icon="['fab', svgs[7]]" /></a>
+      <a href="" class="svg-network-circle"><fa :icon="svgs[8]" /></a>
     </div>
     <div class="footer-nav" v-show="!mobile && !tablet">
       <ul>
         <li class="home">
-          <a href="">HOME</a>
+          <a href="#nav">HOME</a>
         </li>
         <li class="about">
-          <a href="">ABOUT US</a>
+          <a href="#about">ABOUT US</a>
         </li>
         <li class="work">
-          <a href="">OUR WORK</a>
+          <a href="#work">OUR WORK</a>
         </li>
         <li class="contact">
           <a href="">CONTACT</a>
         </li>
       </ul>
     </div>
-    <button class="scroll-top-btn">
-      <div class="svg-network-circle"><fa :icon="svgs[11]" /></div>
-    </button>
+    <div class="svg-network-circle">
+      <button class="scroll-top-btn" @click="scrollToTop">
+        <fa :icon="svgs[11]" />
+      </button>
+    </div>
   </footer>
 </template>
 
@@ -58,7 +65,7 @@ footer {
   .footer-nav {
     justify-self: center;
     width: 65%;
-    max-width: 700px;
+    max-width: 500px;
     ul {
       display: flex;
       list-style: none;

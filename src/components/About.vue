@@ -17,11 +17,11 @@ export default {
 </script>
 
 <template>
-  <div class="about-container">
+  <section class="about-container" id="about">
     <h2>Who We Are</h2>
     <Story :mobile="mobile" :svg="svgs[0]" />
     <Story :mobile="mobile" :svg="svgs[1]" />
-  </div>
+  </section>
 </template>
 
 <style lang="scss">
