@@ -1,5 +1,7 @@
 # WM Frontend
 
+[Live](https://wm-frontend.vercel.app/)
+
 ## Project Setup
 
 ```sh
